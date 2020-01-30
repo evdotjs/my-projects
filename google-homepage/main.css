@@ -42,12 +42,12 @@ li a:hover {
 
 #sign-in:active { background-color: #296CDB;}
 
-#menu img {
+#apps img {
   width: 16px;
   opacity: 0.6;
 }
 
-#menu img:hover {
+#apps img:hover {
   opacity: 1;
   cursor: pointer;
 }
