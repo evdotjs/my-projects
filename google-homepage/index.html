@@ -3,38 +3,46 @@
 	<head>
 		<title>Google</title>
 		<link rel="shortcut icon" href="img/favicon.png" />
+		<link rel="stylesheet" type="text/css "href="reset.css" />
+		<link rel="stylesheet" type="text/css "href="main.css" />
 	</head>
 	<body>
 		<header>
 			<nav>
-				<ul>
+				<ul class="clearfix">
 					<li><a href="#">About</a></li>
 					<li><a href="#">Store</a></li>
-					<li><a href="#">Gmail</a></li>
-					<li><a href="#">Images</a></li>
-					<li><img src="img/grid.png" alt="menu icon"></li>
-					<li><button>Sign In</button></li>
+					<span>
+						<li><a href="#">Gmail</a></li>
+						<li><a href="#">Images</a></li>
+						<li id="menu"><img src="img/grid.png" alt="menu icon"></li>
+						<li><button id="sign-in">Sign in</button></li>
+					</span>
 				</ul>
 			</nav>
 		</header>
 		<main>
-			<img src="img/logo.png" alt="google logo">
-			<input type="search">
-			<button>Google Search</button>
-			<button>I'm Feeling Lucky</button>
-			<section>
-				<img src="img/privacy-shield.png" alt="privacy checkup shield">
+			<img src="img/logo.png" alt="google logo" id="logo">
+			<input type="search" id="search">
+			<div id="buttons">
+				<button>Google Search</button>
+				<button>I'm Feeling Lucky</button>
+			</div>
+			<!-- <section>
+				<img src="img/privacy-shield.png" alt="privacy checkup shield" id="shield">
 				<p>It's Data Privacy Day. <a href="#">Take a quick Checkup</a> to review your settings</p>
-			</section>
+			</section> -->
 		</main>
 		<footer>
 			<ul>
 				<li><a href="#">Advertising</a></li>
 				<li><a href="#">Business</a></li>
 				<li><a href="#">How Search works</a></li>
-				<li><a href="#">Privacy</a></li>
-				<li><a href="#">Terms</a></li>
-				<li><a href="#">Settings</a></li>
+				<span>
+					<li><a href="#">Privacy</a></li>
+					<li><a href="#">Terms</a></li>
+					<li><a href="#">Settings</a></li>
+				</span>
 			</ul>
 		</footer>
 

@@ -1,0 +1,135 @@
+body {
+  color: rgba(0,0,0,0.8);
+  font-family: arial, sans-serif;
+}
+
+header {
+  padding: 1em;
+}
+
+ul li {
+  display: inline-block;
+  font-size: .8em;
+  margin: 0;
+  padding: 0 .8em;
+}
+
+nav ul a {
+  float: left;
+}
+
+ul span {
+  float: right;
+}
+
+li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+li a:hover {
+  text-decoration: underline;
+}
+
+#sign-in {
+  color: white;
+  font-weight: bold;
+  background-color: #4285f4;
+  border: none;
+  border-radius: 2px;
+  padding: .5em 1em;
+}
+
+#sign-in:active { background-color: #296CDB;}
+
+#menu img {
+  width: 16px;
+  opacity: 0.6;
+}
+
+#menu img:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+  margin-top: 8em;
+}
+
+#logo,
+#search,
+#buttons {
+  display: block;
+  margin: auto;
+}
+
+#logo {
+  width: 272px;
+  margin-bottom: 2em;
+}
+
+#search {
+  width: 50%;
+  padding: 1em;
+  border-radius: 30px;
+  margin-bottom: 1.5em;
+  border: 1px solid #d3d3d3;
+}
+
+#search:hover {
+  box-shadow: 0 1px 3px 2px rgba(0, 0, 0, 0.1);
+}
+
+#buttons {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+}
+
+#buttons button {
+  background-color: #f2f2f2;
+  border: 1px solid #f2f2f2;
+  border-radius: 5px;
+  padding: .8em 1.2em;
+  margin: .5em;
+}
+
+#buttons button:hover {
+  border: 1px solid #888;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,0.1);
+}
+
+#shield {
+  width: 32px;
+}
+
+section {
+  width: 50%;
+  margin: auto;
+  margin-top: 6em;
+}
+
+section p {
+  display: inline;
+  margin: auto;
+}
+
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #f2f2f2;
+  border-top: 1px solid #e1e1e1;
+}
+
+footer ul {
+  padding: 1em;
+}
+
+.clearfix::after {
+ content: "";
+ clear: both;
+ display: table;
+}
