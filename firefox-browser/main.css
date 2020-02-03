@@ -1,0 +1,55 @@
+.container {
+  background-color: #20123A;
+  font-family: sans-serif;
+  color: white;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:  "header"
+                        "main"
+                        "footer";
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+a:hover { text-decoration: underline; }
+
+header ul a,
+.mozilla a { text-decoration: underline; }
+header ul a:hover,
+.mozilla a:hover { text-decoration: none; }
+
+header { grid-area: header; }
+main { grid-area: main; }
+footer {
+  grid-area: footer;
+  list-style-type: none;
+}
+
+
+header h1 {
+  margin: 0;
+}
+
+main {
+  background-color: white;
+  color: black;
+  display: flex;
+}
+
+.mozilla {
+  display: flex;
+}
+
+footer ul {
+  list-style-type: none;
+}
+
+.links li:first-child {
+  font-weight: bold;
+}
+
+.mozilla ul li {
+  display: inline-block;
+}
