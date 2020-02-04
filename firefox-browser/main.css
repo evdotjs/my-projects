@@ -1,13 +1,21 @@
 .container {
   background-color: #20123A;
-  font-family: sans-serif;
+  font-family: InterRegular, sans-serif;
   color: white;
+  line-height: 1.5em;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:  "header"
+                        "browser"
                         "main"
                         "footer";
 }
+
+h1,
+h2,
+h3 { font-family: Metropolis, InterRegular, sans-serif}
+
+h2 { font-size: 1.125em; }
 
 a {
   color: white;
@@ -15,16 +23,54 @@ a {
 }
 a:hover { text-decoration: underline; }
 
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
 header ul a,
 .mozilla a { text-decoration: underline; }
 header ul a:hover,
 .mozilla a:hover { text-decoration: none; }
 
-header { grid-area: header; }
-main { grid-area: main; }
+header {
+  grid-area: header;
+  text-align: center;
+  background-image: url("img/firefox-logo.png");
+  background-repeat: no-repeat;
+  background-position: top 8% center;
+  padding-top: 8em;
+  background-size: 250px;
+}
+
+header p {
+  font-size: 1.125rem;
+  width: 65%;
+  margin: 1em auto;
+  line-height: 1.5em;
+}
+
+header ul {
+  font-size: .75rem;
+  margin-top: 5rem;
+}
+
+header+img {
+  grid-area: browser;
+  margin: auto;
+}
+
+
+
 footer {
   grid-area: footer;
-  list-style-type: none;
+}
+
+header,
+main div,
+footer {
+  width: 95%;
+  margin: auto;
 }
 
 
@@ -32,18 +78,63 @@ header h1 {
   margin: 0;
 }
 
+button {
+  background-color: rgb(0, 94, 219);
+  border: none;
+  border-radius: 2px;
+  color: white;
+  padding: 1em 1.5em;
+  font-weight: bold;
+}
+
+h6 {
+  margin: 1em 0;
+}
+
 main {
+  grid-area: main;
+  padding: 3em 0;
   background-color: white;
   color: black;
+}
+
+main div,
+footer section {
   display: flex;
+  flex-direction: column;
+}
+
+.card {
+  padding-top: 100px;
+  text-align: center;
+  background-repeat: no-repeat;
+  background-position: top center;
+  margin: 1em 0;
+}
+
+.card:first-child {
+  background-image: url("img/shield.svg");
+  background-size: 66px;
+}
+
+.card:nth-child(2) {
+  background-image: url("img/lockwise.svg");
+}
+
+.card:last-child {
+  background-image: url("img/monitor.svg");
 }
 
 .mozilla {
   display: flex;
 }
 
-footer ul {
-  list-style-type: none;
+footer .links:nth-child(n-1) {
+  margin-right: auto;
+}
+
+.links li:nth-child(n+1) {
+  margin-top: .5em;
 }
 
 .links li:first-child {
@@ -52,4 +143,50 @@ footer ul {
 
 .mozilla ul li {
   display: inline-block;
+}
+
+@media (min-width: 992px) {
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:  "header browser"
+                          "main main"
+                          "footer footer";
+  }
+
+  header,
+  main div,
+  footer {
+    width: 80%;
+  }
+
+  header {
+    margin-top: 1em;
+    text-align: left;
+    background-position: top 5% left;
+  }
+
+  h1 {
+    font-size: 3em;
+    line-height: normal;
+    padding-bottom: 1em;
+  }
+
+  header p {
+    margin: 0;
+  }
+
+  h2 { font-size: 1.5em; }
+
+  main div,
+  footer section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .card {
+     margin: 0 5em;
+  }
+
 }

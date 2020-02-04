@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css "href="normalize.css">
     <link rel="stylesheet" type="text/css "href="main.css">
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/metropolis" type="text/css"/>
+    <link rel="stylesheet" media="screen" href="https://fontlibrary.org/face/inter-ui" type="text/css"/>
   </head>
   <body>
     <!---
@@ -15,32 +17,33 @@
       <h1>Get the latest Firefox browser.</h1>
       <p>Automatic privacy is here. Download Firefox to block over 2000 trackers.</p>
       <button>Download Now</button>
-      <h4><a href="#">Firefox Privacy Notice</a></h4>
-
+      <h6><a href="#">Firefox Privacy Notice</a></h6>
       <ul>
         <li><a href="#">Advanced install options & other platforms</a></li>
         <li><a href="#">Download in another language</a></li>
         <li><a href="#">Fix a problem</a></li>
       </ul>
     </header>
+    <img src="img/browser-window.svg" alt="browser window">
 
     <!---
     MAIN
     --->
     <main>
       <div>
-      <section>
-        <h2>See what's being blocked</h2>
-        <p>Firefox shows you how many data-collecting trackers are blocked with <strong>Enhanced Tracking Protection</strong>.</p>
-      </section>
-      <section>
-        <h2>Make your passwords portable</h2>
-        <p><strong>Firefox Lockwise</strong> makes the passwords you save in Firefox secure and available on all your devices.</p>
-      </section>
-      <section>
-        <h2>Watch for data breaches</h2>
-        <p><strong>Firefox Monitor</strong> alerts you if we know your information is a part of another company’s data breach. </p>
-      </section>
+        <section class="card">
+          <h2>See what's being blocked</h2>
+          <p>Firefox shows you how many data-collecting trackers are blocked with <strong>Enhanced Tracking Protection</strong>.</p>
+        </section>
+        <section class="card">
+          <h2>Make your passwords portable</h2>
+          <p><strong>Firefox Lockwise</strong> makes the passwords you save in Firefox secure and available on all your devices.</p>
+        </section>
+        <section class="card">
+          <h2>Watch for data breaches</h2>
+          <p><strong>Firefox Monitor</strong> alerts you if we know your information is a part of another company’s data breach. </p>
+        </section>
+      </div>
     </main>
 
     <!---
@@ -98,7 +101,7 @@
 
       <section class="mozilla">
         <div>
-          <img src="#" alt="mozilla logo">
+          <img src="img/mozilla-logo.svg" alt="mozilla logo">
           <ul>
             <li><a href="#">mozilla.org</a></li>
             <li><a href="#">Privacy</a></li>
@@ -107,7 +110,6 @@
             <li><a href="#">Legal</a></li>
           </ul>
         </div>
-
         <div>
           <p> Visit <a href="#">Mozilla Corporation’s</a> not-for-profit parent, the <a href="#">Mozilla Foundation</a>.</p>
           <p>Portions of this content are ©1998–2020 by individual mozilla.org contributors. Content available under a <a href="#">Creative Commons license</a>.</p>
