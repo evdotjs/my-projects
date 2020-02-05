@@ -6,7 +6,6 @@
   display: grid;
   grid-template-columns: 1fr;
   grid-template-areas:  "header"
-                        "browser"
                         "main"
                         "footer";
 }
@@ -41,6 +40,8 @@ header {
   background-position: top 8% center;
   padding-top: 8em;
   background-size: 250px;
+  display: flex;
+  flex-direction: column;
 }
 
 header p {
@@ -55,13 +56,6 @@ header ul {
   margin-top: 5rem;
 }
 
-header+img {
-  grid-area: browser;
-  margin: auto;
-}
-
-
-
 footer {
   grid-area: footer;
 }
@@ -73,6 +67,10 @@ footer {
   margin: auto;
 }
 
+header img {
+  max-width: 624px;
+  margin: auto;
+}
 
 header h1 {
   margin: 0;
@@ -150,9 +148,14 @@ footer .links:nth-child(n-1) {
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-areas:  "header browser"
+    grid-template-areas:  "header header"
                           "main main"
                           "footer footer";
+
+    background-image: url('img/hero-bg.svg');
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: 50% 50%;
   }
 
   header,
@@ -164,7 +167,15 @@ footer .links:nth-child(n-1) {
   header {
     margin-top: 1em;
     text-align: left;
+    background-image: url('img/firefox-logo.png');
     background-position: top 5% left;
+    padding-bottom: 8em;
+    flex-direction: row;
+  }
+
+  header div,
+  header img {
+    width: 50%;
   }
 
   h1 {
