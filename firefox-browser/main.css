@@ -127,20 +127,62 @@ footer section {
   display: flex;
 }
 
-footer .links:nth-child(n-1) {
+footer .link-list:nth-child(n-1) {
   margin-right: auto;
 }
 
-.links li:nth-child(n+1) {
+.link-list li:nth-child(n+1) {
   margin-top: .5em;
 }
 
-.links li:first-child {
+.link-list li:first-child {
   font-weight: bold;
 }
 
 .mozilla ul li {
   display: inline-block;
+}
+
+.social-media li {
+  margin-bottom: 1em;
+}
+
+.social-media li:nth-child(n+2) {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  overflow: hidden;
+  margin-right: 0.5em;
+  border-bottom: 1px solid rgba(0,0,0,0);
+}
+
+.social-media li:nth-child(n+2)>a {
+  color: rgba(0,0,0,0);
+}
+
+.social-media li:nth-child(n+2):hover{
+  border-bottom: 1px solid #fff;
+}
+
+.twitter,
+.instagram,
+.youtube {
+  background-repeat: no-repeat;
+  background-position: top left;
+  background-size: 16px 16px;
+}
+
+
+.twitter {
+  background-image: url('img/tw.svg');
+}
+
+.instagram {
+  background-image: url('img/ig.svg');
+}
+
+.youtube {
+  background-image: url('img/yt.svg');
 }
 
 @media (min-width: 992px) {
@@ -169,7 +211,7 @@ footer .links:nth-child(n-1) {
     text-align: left;
     background-image: url('img/firefox-logo.png');
     background-position: top 5% left;
-    padding-bottom: 8em;
+    padding-bottom: 7em;
     flex-direction: row;
   }
 
@@ -188,6 +230,19 @@ footer .links:nth-child(n-1) {
     margin: 0;
   }
 
+  header button {
+    margin-top: 3em;
+  }
+
+  header button:hover {
+    cursor: pointer;
+    background-color: #0055c6;
+  }
+
+  header h6 {
+    margin-left: 2em;
+  }
+
   h2 { font-size: 1.5em; }
 
   main div,
@@ -198,6 +253,24 @@ footer .links:nth-child(n-1) {
 
   .card {
      margin: 0 5em;
+  }
+
+  .links {
+    padding: 3em 0;
+  }
+
+  .mozilla {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding: 3em 0;
+    font-size: .75em;
+  }
+
+  .mozilla div:first-child {
+    width: 70%;
+  }
+
+  .mozilla ul li {
+    padding-right: 2em;
   }
 
 }
