@@ -1,0 +1,82 @@
+html { height: 100%; }
+
+main {
+  font-family: monospace, arial, sans-serif;
+}
+
+body {
+   background: linear-gradient(45deg, #e66465, #9198e5);
+   background-size: contain;
+   background-repeat: no-repeat;
+ }
+
+.screen {
+  background-color: #000;
+  padding: 20% 2em 1em 0;
+  color: #fff;
+  border-radius: 3px 3px 0 0;
+}
+
+h2 {
+  margin: 0;
+  text-align: right;
+  font-size: 3em;
+}
+
+.buttons {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  grid-template-areas:  "percent negative clear divide"
+                        "seven eight nine multiply"
+                        "four five six minus"
+                        "one two three plus"
+                        "zero point equals equals";
+}
+
+button {
+  border: none;
+  height: 100px;
+  background-color: #eee;
+}
+
+.one { grid-area: one; }
+.two { grid-area: two; }
+.three { grid-area: three; }
+.four { grid-area: four; }
+.five { grid-area: five; }
+.six { grid-area: six; }
+.seven { grid-area: seven; }
+.eight { grid-area: eight; }
+.nine { grid-area: nine; }
+.ten { grid-area: ten; }
+
+.plus { grid-area: plus; }
+.minus { grid-area: minus; }
+.multiply { grid-area: multiply; }
+.divide { grid-area: divide; }
+.equals { grid-area: equals; }
+
+.clear { grid-area: clear; }
+.point { grid-area: point; }
+.percent { grid-area: percent; }
+.negative { grid-area: negative; }
+
+.operator {
+  background-color: #9564E2;
+}
+
+.equals {
+  background-color: #DF3F7C;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}
+
+@media screen and (min-width: 600px) {
+   main {
+     max-width: 600px;
+     margin: auto;
+   }
+}
