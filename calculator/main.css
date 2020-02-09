@@ -1,16 +1,6 @@
-html { height: 100%; }
+html, body, main { height: 100%; }
 
-body {
-   background: linear-gradient(45deg, #e66465, #9198e5);
-   background-size: contain;
-   background-repeat: no-repeat;
-   height: 100%;
- }
-
- main {
-   font-family: 'Space Mono', monospace;
-   height: 100%;
- }
+body { font-family: 'Space Mono', monospace; }
 
 .screen {
   background-color: #000;
@@ -22,9 +12,8 @@ body {
 }
 
 h2 {
-  margin: 0;
   font-size: 3em;
-  margin-top: auto;
+  margin: auto .5em .5em 0;
   text-align: right;
 }
 
@@ -35,19 +24,18 @@ h2 {
 .buttons {
   font-size: 1.5em;
   display: grid;
-  grid-template-rows: repeat(4, 1fr);
+  height: 75%;
+  grid-template-columns: repeat(4, 1fr);
   grid-template-areas:  "negative clear back divide"
                         "seven eight nine multiply"
                         "four five six minus"
                         "one two three plus"
                         "zero point equals equals";
-  height: 75%;
 }
 
 button {
   border: none;
   background-color: #eee;
-  min-height: 100px;
 }
 
 .one { grid-area: one; }
@@ -72,20 +60,25 @@ button {
 .back { grid-area: back; }
 .negative { grid-area: negative; }
 
-.operator {
-  background-color: #9564E2;
-}
+.operator, .equals { color: #fff; }
+.operator { background-color: #9564E2; }
+.operator:hover { background-color: #7750b4; }
+.equals { background-color: #DF3F7C; }
+.equals:hover { background-color: #c8386f; }
 
-.equals {
-  background-color: #DF3F7C;
-}
 
 button:hover {
   cursor: pointer;
   background-color: #ddd;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
+  body {
+    background: linear-gradient(45deg, #e66465, #9198e5);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
    main {
      max-width: 600px;
      margin: auto;
