@@ -1,14 +1,14 @@
 html, body, main { height: 100%; }
 
-body { font-family: 'Space Mono', monospace; }
+body { font-family: 'Source Code Pro', monospace; }
 
 .screen {
   background-color: #000;
   color: #fff;
-  border-radius: 5px 5px 0 0;
   height: 25%;
   display: flex;
   flex-direction: column;
+  min-height: 90px;
 }
 
 h2 {
@@ -61,10 +61,10 @@ button {
 .negative { grid-area: negative; }
 
 .operator, .equals { color: #fff; }
-.operator { background-color: #9564E2; }
-.operator:hover { background-color: #7750b4; }
-.equals { background-color: #DF3F7C; }
-.equals:hover { background-color: #c8386f; }
+.operator { background-color: #3ec2cf; }
+.operator:hover { background-color: #30b6c3; }
+.equals { background-color: #3e7acf; }
+.equals:hover { background-color: #306dc3; }
 
 
 button:hover {
@@ -74,7 +74,7 @@ button:hover {
 
 @media screen and (min-width: 600px) {
   body {
-    background: linear-gradient(45deg, #e66465, #9198e5);
+    background: linear-gradient(to right, #4b3ecf, #3ec2cf);
     background-size: contain;
     background-repeat: no-repeat;
   }
@@ -83,4 +83,6 @@ button:hover {
      max-width: 600px;
      margin: auto;
    }
+
+   .screen { border-radius: 5px 5px 0 0; }
 }

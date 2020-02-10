@@ -38,6 +38,7 @@ function equals() {
   clear();
   displayNumber.innerHTML = total;
   document.querySelector('.equation').innerHTML = equation.join(" ");
+  console.log(equation.join(' '));
 }
 
 function operate() {
@@ -93,7 +94,6 @@ document.querySelector('.back').addEventListener('click', event => {
   }
   updateDisplay();
 });
-
 
 //run operate function when [+,-,×,÷] buttons are pressed
 operators.forEach(operator => operator.addEventListener('click', operate) );
