@@ -5,6 +5,13 @@ html, body, main {
 body {
   font-family: "Source Code Pro", monospace;
 }
+@media screen and (min-width: 600px) {
+  body {
+    background: linear-gradient(to right, #4b3ecf, #3ec2cf);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
 
 .screen {
   background-color: #000;
@@ -21,6 +28,11 @@ body {
   font-size: 3em;
   margin: auto 0.5em 0.5em 0;
   text-align: right;
+}
+@media screen and (min-width: 600px) {
+  .screen {
+    border-radius: 5px 5px 0 0;
+  }
 }
 
 .buttons {
@@ -76,8 +88,8 @@ button:hover {
   grid-area: nine;
 }
 
-.ten {
-  grid-area: ten;
+.zero {
+  grid-area: zero;
 }
 
 .plus {
@@ -88,12 +100,12 @@ button:hover {
   grid-area: minus;
 }
 
-.multiply {
-  grid-area: multiply;
-}
-
 .divide {
   grid-area: divide;
+}
+
+.multiply {
+  grid-area: multiply;
 }
 
 .equals {
@@ -135,19 +147,163 @@ button:hover {
 }
 
 @media screen and (min-width: 600px) {
+  main {
+    max-width: 600px;
+    margin: auto;
+  }
+}
+html, body, main {
+  height: 100%;
+}
+
+body {
+  font-family: "Source Code Pro", monospace;
+}
+@media screen and (min-width: 600px) {
   body {
     background: linear-gradient(to right, #4b3ecf, #3ec2cf);
     background-size: contain;
     background-repeat: no-repeat;
   }
+}
 
+.screen {
+  background-color: #000;
+  color: #fff;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  min-height: 90px;
+}
+.screen:nth-child(n) {
+  padding: 0 1em;
+}
+.screen h2 {
+  font-size: 3em;
+  margin: auto 0.5em 0.5em 0;
+  text-align: right;
+}
+@media screen and (min-width: 600px) {
+  .screen {
+    border-radius: 5px 5px 0 0;
+  }
+}
+
+.buttons {
+  font-size: 1.5em;
+  display: grid;
+  height: 75%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: "negative clear back divide" "seven eight nine multiply" "four five six minus" "one two three plus" "zero point equals equals";
+}
+
+button {
+  border: none;
+  background-color: #eee;
+}
+button:hover {
+  cursor: pointer;
+  background-color: #e1e1e1;
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.seven {
+  grid-area: seven;
+}
+
+.eight {
+  grid-area: eight;
+}
+
+.nine {
+  grid-area: nine;
+}
+
+.zero {
+  grid-area: zero;
+}
+
+.plus {
+  grid-area: plus;
+}
+
+.minus {
+  grid-area: minus;
+}
+
+.divide {
+  grid-area: divide;
+}
+
+.multiply {
+  grid-area: multiply;
+}
+
+.equals {
+  grid-area: equals;
+}
+
+.clear {
+  grid-area: clear;
+}
+
+.point {
+  grid-area: point;
+}
+
+.back {
+  grid-area: back;
+}
+
+.negative {
+  grid-area: negative;
+}
+
+.operator {
+  background-color: #3ec2cf;
+  color: #fff;
+}
+.operator + .equals {
+  color: #fff;
+}
+.operator:hover {
+  background-color: #2ba3af;
+}
+
+.equals {
+  background-color: #3e7acf;
+}
+.equals:hover {
+  background-color: #2b62af;
+}
+
+@media screen and (min-width: 600px) {
   main {
     max-width: 600px;
     margin: auto;
-  }
-
-  .screen {
-    border-radius: 5px 5px 0 0;
   }
 }
 

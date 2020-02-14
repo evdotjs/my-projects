@@ -1,0 +1,90 @@
+// VARIABLES
+$numbers-color: #eee;
+$operators-color: #3ec2cf;
+$equals-color: #3e7acf;
+
+$grid-areas: (one, two, three,
+              four, five, six,
+              seven, eight, nine,
+              zero, plus, minus,
+              divide, multiply, equals,
+              clear, point, back, negative);
+
+//MAIN
+
+html, body, main { height: 100%; }
+
+body {
+  font-family: "Source Code Pro", monospace;
+  @media screen and (min-width: 600px) {
+    background: linear-gradient(to right, adjust-hue($equals-color, 30%), $operators-color);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+}
+
+.screen {
+  background-color: #000;
+  color: #fff;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  min-height: 90px;
+  &:nth-child(n) { padding: 0 1em; }
+  h2 {
+    font-size: 3em;
+    margin: auto 0.5em 0.5em 0;
+    text-align: right;
+  }
+  @media screen and (min-width: 600px) {
+    border-radius: 5px 5px 0 0;
+  }
+}
+
+.buttons {
+  font-size: 1.5em;
+  display: grid;
+  height: 75%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas:  "negative clear back divide"
+                        "seven eight nine multiply"
+                        "four five six minus"
+                        "one two three plus"
+                        "zero point equals equals";
+}
+
+button {
+  border: none;
+  background-color: $numbers-color;
+  &:hover {
+    cursor: pointer;
+    background-color: darken($numbers-color, 5%);
+  }
+}
+
+//create id and grid area for each button
+@each $area in $grid-areas {
+  .#{$area} {
+    grid-area: $area;
+  }
+}
+
+.operator {
+  background-color: $operators-color;
+   color: #fff;
+  + .equals { color: #fff; }
+  &:hover { background-color: darken($operators-color, 10%); }
+}
+
+.equals {
+  background-color: $equals-color;
+  &:hover { background-color: darken($equals-color, 10%); }
+}
+
+
+@media screen and (min-width: 600px) {
+  main {
+    max-width: 600px;
+    margin: auto;
+  }
+}
