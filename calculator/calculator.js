@@ -7,17 +7,17 @@ const operators = document.querySelectorAll('.operator');
 
 //updates the display (<h2>) to show currentNumber
 function updateDisplay() {
-  displayNumber.innerHTML = parseInt(currentNumber.join(""));
+  displayNumber.innerHTML = currentNumber.join("");
 }
 
-//reset currentNumber to 0 and
+//reset currentNumber and displayNumber to 0
 function clear() {
   currentNumber = [0];
-  document.querySelector('h2').innerHTML = currentNumber;
+  displayNumber.innerHTML = currentNumber;
 }
 
 function equals() {
-  equation.push(parseInt(displayNumber.innerHTML));
+  equation.push(parseFloat(displayNumber.innerHTML));
   equation.push('=');
   switch (equation[1]) {
     case '+':
@@ -33,12 +33,11 @@ function equals() {
       total = equation[0] / equation[2];
       break;
     default:
-      total = parseInt(currentNumber.join(""));
+      total = parseFloat(currentNumber.join(""));
   }
   clear();
   displayNumber.innerHTML = total;
   document.querySelector('.equation').innerHTML = equation.join(" ");
-  console.log(equation.join(' '));
 }
 
 function operate() {
@@ -49,7 +48,7 @@ function operate() {
   }
   //the number typed before the operator will be added to the equation array
   else {
-    total = parseInt(currentNumber.join(""));
+    total = parseFloat(currentNumber.join(""));
     equation.push(total);
   }
 
@@ -77,7 +76,7 @@ document.querySelector('.clear').addEventListener('click', event => {
 
 //add numbers to currentNumber when button pressed
 numbers.forEach(number => number.addEventListener('click', event => {
-  if (currentNumber[0] === 0) {
+  if (currentNumber[0] == 0) {
     currentNumber.shift();
   }
   if ( currentNumber.length < 12 ) {
@@ -85,6 +84,15 @@ numbers.forEach(number => number.addEventListener('click', event => {
     updateDisplay();
   }
 }) );
+
+//turn currentNumber negative if positive
+document.querySelector('.negative').addEventListener('click', event => {
+  currentNumber[0] == '-' ?
+    currentNumber.shift():
+    currentNumber.unshift('-');
+  updateDisplay();
+});
+
 
 //remove last number from currentNumber array
 document.querySelector('.back').addEventListener('click', event => {
