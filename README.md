@@ -4,6 +4,7 @@
     - a recreation of Google's homepage using HTML and CSS
 2. [Firefox Browser](https://evdotjs.github.io/my-projects/firefox-browser/) ([reference](https://web.archive.org/web/20200213024503/https://www.mozilla.org/en-US/firefox/new/))
     - a recreation of the Mozilla Firefox download page
-3. [Calculator](https://evdotjs.github.io/my-projects/calculator/)
+3. [Calculator](https://evdotjs.github.io/my-projects/calculator/) ([design reference](https://www.behance.net/gallery/55910657/Calculator-PSD-Freebie))
     - a simple calculator using HTML, CSS, and Javascript
+
 
