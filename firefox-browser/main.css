@@ -3,11 +3,6 @@
   font-family: InterRegular, sans-serif;
   color: white;
   line-height: 1.5em;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-areas:  "header"
-                        "main"
-                        "footer";
 }
 
 h1,
@@ -42,6 +37,12 @@ header {
   background-size: 250px;
   display: flex;
   flex-direction: column;
+  width: 100%;
+}
+
+header img {
+  width: 100%;
+  padding-bottom: 2em;
 }
 
 header p {
@@ -58,6 +59,7 @@ header ul {
 
 footer {
   grid-area: footer;
+  padding-top: 1.5em;
 }
 
 header,
@@ -139,6 +141,10 @@ footer .link-list:nth-child(n-1) {
   font-weight: bold;
 }
 
+.link-list li:nth-child(n+2) {
+  display: none;
+}
+
 .mozilla ul li {
   display: inline-block;
 }
@@ -185,8 +191,50 @@ footer .link-list:nth-child(n-1) {
   background-image: url('img/yt.svg');
 }
 
-@media (min-width: 992px) {
+@media screen and (min-width: 600px) {
 
+  main div,
+  footer section {
+    display: flex;
+    flex-direction: row;
+  }
+
+  header,
+  main div,
+  footer {
+    width: 80%;
+  }
+
+  .link-list li:nth-child(n+2) {
+    display: inherit;
+  }
+
+  .links {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  .links ul {
+    width: 50%;
+  }
+
+  .mozilla {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    padding: 3em 0;
+    font-size: .75em;
+  }
+
+  .mozilla div:last-child {
+    width: 70%;
+  }
+
+  .mozilla ul li {
+    padding-right: 2em;
+  }
+}
+
+@media screen and (min-width: 992px) {
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -198,12 +246,6 @@ footer .link-list:nth-child(n-1) {
     background-position: top right;
     background-repeat: no-repeat;
     background-size: 50% 50%;
-  }
-
-  header,
-  main div,
-  footer {
-    width: 80%;
   }
 
   header {
@@ -245,32 +287,22 @@ footer .link-list:nth-child(n-1) {
 
   h2 { font-size: 1.5em; }
 
-  main div,
-  footer section {
-    display: flex;
-    flex-direction: row;
-  }
 
   .card {
      margin: 0 5em;
   }
 
+  footer {
+    padding-top: 0;
+  }
+
   .links {
     padding: 3em 0;
+    flex-wrap: nowrap;
   }
 
-  .mozilla {
-    border-top: 1px solid rgba(255,255,255,0.3);
-    padding: 3em 0;
-    font-size: .75em;
-  }
-
-  .mozilla div:first-child {
-    width: 70%;
-  }
-
-  .mozilla ul li {
-    padding-right: 2em;
-  }
+    .mozilla div:first-child {
+      width: 70%;
+    }
 
 }
