@@ -102,9 +102,9 @@ main {
   background-image: url('img/privacy-shield.png');
   background-repeat: no-repeat;
   background-size: 48px;
-  background-position: 6em;
+  background-position: left;
   font-size: .8em;
-  width: 50%;
+  width: 42%;
   margin: auto;
   margin-top: .5em;
   display: flex;
