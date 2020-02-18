@@ -16,10 +16,9 @@ function clear() {
   displayNumber.innerHTML = currentNumber;
 }
 
-function equals() {
-  equation.push(parseFloat(displayNumber.innerHTML));
-  equation.push('=');
-  switch (equation[1]) {
+//operate on the first number in the equation and the current number in the display
+function getTotal(operator) {
+  switch (operator) {
     case '+':
       total = equation[0] + equation[2];
       break;
@@ -35,9 +34,15 @@ function equals() {
     default:
       total = parseFloat(currentNumber.join(""));
   }
+}
+
+function equals() {
+  equation.push(parseFloat(displayNumber.innerHTML));
+  equation.push('=');
+  document.querySelector('.equation').innerHTML = equation.join(" ");
+  getTotal(equation[1]);
   clear();
   displayNumber.innerHTML = total;
-  document.querySelector('.equation').innerHTML = equation.join(" ");
 }
 
 function operate() {
@@ -46,13 +51,13 @@ function operate() {
     //reset the equation to the last answer
     equation = [total];
   }
-  //the number typed before the operator will be added to the equation array
+  //the current number will be added to the equation array
   else {
     total = parseFloat(currentNumber.join(""));
     equation.push(total);
   }
 
-  //operate on the first two numbers in the equation array
+  //calculate the total of the first two numbers in the equation array
   if (equation.length > 2) {
     equals();
     equation = [total];
@@ -64,7 +69,16 @@ function operate() {
 
   //show the equation array at the top of the screen
   document.querySelector('.equation').innerHTML = equation.join(" ");
-} //operate
+}
+
+
+function back() {
+  currentNumber.pop();
+  if (currentNumber[0] == undefined) {
+    clear();
+  }
+  updateDisplay();
+}
 
 //reset total and equation when C button pressed
 document.querySelector('.clear').addEventListener('click', event => {
@@ -93,18 +107,24 @@ document.querySelector('.negative').addEventListener('click', event => {
   updateDisplay();
 });
 
-
-//remove last number from currentNumber array
-document.querySelector('.back').addEventListener('click', event => {
-  currentNumber.pop();
-  if (currentNumber[0] == undefined) {
-    clear();
-  }
-  updateDisplay();
-});
+//call back() function when button is clicked or backspace key is pressed
+document.querySelector('.back').addEventListener('click', event => back());
 
 //run operate function when [+,-,×,÷] buttons are pressed
 operators.forEach(operator => operator.addEventListener('click', operate) );
 
 //evaluate the equation when [=] button is presesed
 document.querySelector('.equals').addEventListener('click', equals);
+
+//listen for keyboard input
+document.addEventListener('keydown', event => {
+  //console.log(event.key);
+  if (event.key === 'Backspace') {
+    back();
+  } else if (event.key === 'Escape') {
+    clear();
+    total = 0;
+    equation = [];
+    document.querySelector('.equation').innerHTML = equation;
+  }
+});
