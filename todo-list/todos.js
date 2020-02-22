@@ -1,10 +1,10 @@
 let todoList = {
   todos: [],
   displayTodos: function() {
-    console.log('My Todos:');
     if(this.todos.length === 0) {
       console.log('Your todo list is empty!')
     } else {
+      console.log('My Todos:');
       for (let i = 0; i < this.todos.length; i++) {
         if (this.todos[i].completed) {
           console.log(`[x] ${this.todos[i].todoText}`);
@@ -49,15 +49,30 @@ let todoList = {
   }
 }
 
-//get access to the display todos button
-const displayTodosButton = document.querySelector('.display');
-const toggleAllButton = document.querySelector('.toggle');
+const handlers = {
+  displayTodos: () => { todoList.displayTodos(); },
+  addTodo: () => {
+    const addTodoInput = document.querySelector('.addTodoInput');
+    todoList.addTodo(addTodoInput.value);
+    addTodoInput.value = '';
+  },
+  changeTodo: () => {
+    const changeTodoPosition = document.querySelector('.changeTodoPosition');
+    const changeTodoText = document.querySelector('.changeTodoText');
 
-//run displaytodos on click
-displayTodosButton.addEventListener('click', function() {
-  todoList.displayTodos();
-});
-
-toggleAllButton.addEventListener('click', function() {
-  todoList.toggleAll();
-});
+    todoList.changeTodo(changeTodoPosition.valueAsNumber-1, changeTodoText.value);
+    changeTodoPosition.value = '';
+    changeTodoText.value = '';
+  },
+  deleteTodo: () => {
+    const deleteTodoPosition = document.querySelector('.deleteTodoPosition');
+    todoList.deleteTodo(deleteTodoPosition.valueAsNumber-1);
+    deleteTodoPosition.value = '';
+  },
+  toggleCompleted: () => {
+    const toggleCompletedPosition = document.querySelector('.toggleCompletedPosition');
+    todoList.toggleCompleted(toggleCompletedPosition.valueAsNumber-1);
+    toggleCompletedPosition.value = '';
+  },
+  toggleAll: () => { todoList.toggleAll(); }
+};

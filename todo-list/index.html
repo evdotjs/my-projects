@@ -2,16 +2,42 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <title>To Do List</title>
     <style>
-      body {background-color:#3ec3cf;}
+      br {margin-top: 1em;}
+      h1 {text-align: center;}
+      input {margin-right: .5em;}
+      main { width: 80%; margin: auto;}
     </style>
   </head>
   <body>
     <h1>Todo List</h1>
 
-    <button class="display">Display Todos</button>
-    <button class="toggle">Toggle All</button>
+    <main>
+      <button class="btn btn-outline-primary display" onclick="handlers.displayTodos()">Display Todos</button>
+      <button class="btn btn-outline-primary toggle" onclick="handlers.toggleAll()">Toggle All</button>
+      <br>
+
+      <input type="text" name="add" value="" class="addTodoInput">
+      <button class="btn btn-outline-primary add" onclick="handlers.addTodo()">Add</button>
+      <br>
+
+      <input type="number" name="add" value="" class="changeTodoPosition">
+      <input type="text" name="add" value="" class="changeTodoText">
+      <button class="btn btn-outline-primary edit" onclick="handlers.changeTodo()">Edit</button>
+      <br>
+
+      <input type="number" name="add" value="" class="deleteTodoPosition">
+      <button class="btn btn-outline-primary delete" onclick="handlers.deleteTodo()">Delete</button>
+      <br>
+
+      <input type="number" name="add" value="" class="toggleCompletedPosition">
+      <button class="btn btn-outline-primary toggle" onclick="handlers.toggleCompleted()">Toggle Completed</button>
+      <br>
+    </main>
+
+
     <script type="text/javascript" src="todos.js"></script>
   </body>
 </html>
