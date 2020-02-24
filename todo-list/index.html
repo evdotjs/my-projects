@@ -9,13 +9,13 @@
       h1 {text-align: center;}
       input {margin-right: .5em;}
       main { width: 80%; margin: auto;}
+      ul {list-style-type: none;}
     </style>
   </head>
   <body>
     <h1>Todo List</h1>
 
     <main>
-      <button class="btn btn-outline-primary display" onclick="handlers.displayTodos()">Display Todos</button>
       <button class="btn btn-outline-primary toggle" onclick="handlers.toggleAll()">Toggle All</button>
       <br>
 
@@ -28,13 +28,11 @@
       <button class="btn btn-outline-primary edit" onclick="handlers.changeTodo()">Edit</button>
       <br>
 
-      <input type="number" name="add" value="" class="deleteTodoPosition">
-      <button class="btn btn-outline-primary delete" onclick="handlers.deleteTodo()">Delete</button>
-      <br>
-
       <input type="number" name="add" value="" class="toggleCompletedPosition">
       <button class="btn btn-outline-primary toggle" onclick="handlers.toggleCompleted()">Toggle Completed</button>
       <br>
+
+      <ul class="toDoUL"></ul>
     </main>
 
 
