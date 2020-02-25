@@ -1,0 +1,28 @@
+br {margin-top: 1em;}
+
+h1 {text-align: center;}
+
+input {margin-right: .5em;}
+
+main {
+  width: 80%; margin: auto;
+  @media screen and (min-width: 992px) {
+    width: 60%;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+li {
+  border: 1px solid #eee;
+  display: flex;
+  &:nth-child(2n) {
+    background-color: #eee;
+  }
+}
+
+.btn-group {
+  margin-left: auto;
+}

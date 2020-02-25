@@ -47,10 +47,8 @@ const handlers = {
     todoList.deleteTodo(position);
     view.displayTodos();
   },
-  toggleCompleted: () => {
-    const toggleCompletedPosition = document.querySelector('.toggleCompletedPosition');
-    todoList.toggleCompleted(toggleCompletedPosition.valueAsNumber-1);
-    toggleCompletedPosition.value = '';
+  toggleCompleted: (position) => {
+    todoList.toggleCompleted(position);
     view.displayTodos();
   },
   toggleAll: () => {
@@ -66,26 +64,38 @@ const view = {
     toDoUL.innerHTML = "";
     todoList.todos.forEach((todo, index) => {
       let toDoLi = document.createElement('li');
+      let buttonGroup = document.createElement('div');
+      buttonGroup.className = 'btn-group';
       toDoLi.id = index;
       todo.completed ?
         toDoLi.textContent = `[x] ${todo.todoText}`:
         toDoLi.textContent = `[ ] ${todo.todoText}`;
       toDoUL.appendChild(toDoLi);
-      toDoLi.appendChild(this.createDeleteButton());
+      toDoLi.appendChild(buttonGroup);
+      buttonGroup.appendChild(this.createToggleButton());
+      buttonGroup.appendChild(this.createDeleteButton());
     });
+  },
+  createToggleButton: function() {
+    let toggleButton = document.createElement('button');
+    toggleButton.textContent = 'Complete';
+    toggleButton.className = 'toggleButton btn btn-outline-primary btn-sm';
+    return toggleButton;
   },
   createDeleteButton: function() {
     let deleteButton = document.createElement('button');
     deleteButton.textContent = 'Delete';
-    deleteButton.className = 'deleteButton'
+    deleteButton.className = 'deleteButton btn btn-outline-primary btn-sm';
     return deleteButton;
   },
   setUpEventListeners: function() {
     const toDoUL = document.querySelector('.toDoUL');
     toDoUL.addEventListener('click', function(event){
       let elementClicked = event.target;
-      if (elementClicked.className === 'deleteButton') {
-        handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
+      if (elementClicked.className.startsWith('deleteButton')) {
+        handlers.deleteTodo(parseInt(elementClicked.parentNode.parentNode.id));
+      } else if (elementClicked.className.startsWith('toggleButton')) {
+        handlers.toggleCompleted(parseInt(elementClicked.parentNode.parentNode.id));
       }
     });
   }

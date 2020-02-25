@@ -1,0 +1,40 @@
+br {
+  margin-top: 1em;
+}
+
+h1 {
+  text-align: center;
+}
+
+input {
+  margin-right: 0.5em;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+}
+@media screen and (min-width: 992px) {
+  main {
+    width: 60%;
+  }
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+li {
+  border: 1px solid #eee;
+  display: flex;
+}
+li:nth-child(2n) {
+  background-color: #eee;
+}
+
+.btn-group {
+  margin-left: auto;
+}
+
+/*# sourceMappingURL=style.css.map */

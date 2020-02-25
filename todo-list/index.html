@@ -3,21 +3,14 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>To Do List</title>
-    <style>
-      br {margin-top: 1em;}
-      h1 {text-align: center;}
-      input {margin-right: .5em;}
-      main { width: 80%; margin: auto;}
-      ul {list-style-type: none;}
-    </style>
+    <link rel="stylesheet" href="style.css">
+    <title>To-Do List</title>
   </head>
   <body>
-    <h1>Todo List</h1>
+    <h1>To-Do List</h1>
 
     <main>
-      <button class="btn btn-outline-primary toggle" onclick="handlers.toggleAll()">Toggle All</button>
-      <br>
+      <ul class="toDoUL"></ul>
 
       <input type="text" name="add" value="" class="addTodoInput">
       <button class="btn btn-outline-primary add" onclick="handlers.addTodo()">Add</button>
@@ -28,11 +21,8 @@
       <button class="btn btn-outline-primary edit" onclick="handlers.changeTodo()">Edit</button>
       <br>
 
-      <input type="number" name="add" value="" class="toggleCompletedPosition">
-      <button class="btn btn-outline-primary toggle" onclick="handlers.toggleCompleted()">Toggle Completed</button>
+      <button class="btn btn-outline-primary toggle" onclick="handlers.toggleAll()">Toggle All</button>
       <br>
-
-      <ul class="toDoUL"></ul>
     </main>
 
 
