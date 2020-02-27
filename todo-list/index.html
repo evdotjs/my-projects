@@ -7,25 +7,25 @@
     <title>To-Do List</title>
   </head>
   <body>
-    <h1>To-Do List</h1>
-
     <main>
-      <ul class="toDoUL"></ul>
-
-      <input type="text" name="add" value="" class="addTodoInput">
-      <button class="btn btn-outline-primary add" onclick="handlers.addTodo()">Add</button>
-      <br>
-
-      <input type="number" name="add" value="" class="changeTodoPosition">
-      <input type="text" name="add" value="" class="changeTodoText">
-      <button class="btn btn-outline-primary edit" onclick="handlers.changeTodo()">Edit</button>
-      <br>
-
-      <button class="btn btn-outline-primary toggle" onclick="handlers.toggleAll()">Toggle All</button>
-      <br>
+      <h1>{{title}}</h1>
+      <ul class="toDoUL">
+        <li v-for="(item, index) in todos">
+          <span v-bind:class="item.class">{{item.text}}</span>
+          <div class="btn-group">
+            <button v-on:click="toggleCompleted(index)" class="btn btn-outline-primary btn-sm">Complete</button>
+            <button v-on:click="todos.splice(index,1)" class="btn btn-outline-primary btn-sm">Delete</button>
+          </div>
+        </li>
+        <li>
+          <input v-model="newToDo" v-on:keypress.enter="addToDo" type="text" name="add" value="">
+          <button v-on:click="addToDo" class="btn btn-outline-primary add">Add</button>
+          <br>
+        </li>
+      </ul>
     </main>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script type="text/javascript" src="todos.js"></script>
   </body>
 </html>

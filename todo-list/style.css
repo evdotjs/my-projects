@@ -20,17 +20,31 @@ main {
   }
 }
 
+li input[type=text] {
+  width: 100%;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
 }
 
 li {
+  padding: 0.5em;
   border: 1px solid #eee;
   display: flex;
 }
 li:nth-child(2n) {
   background-color: #eee;
+}
+
+.incomplete {
+  text-decoration: none;
+}
+
+.complete {
+  text-decoration: line-through;
+  color: #999999;
 }
 
 .btn-group {

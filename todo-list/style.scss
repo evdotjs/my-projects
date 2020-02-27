@@ -11,16 +11,30 @@ main {
   }
 }
 
+li input[type="text"] {
+  width: 100%;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
 }
 li {
+  padding: .5em;
   border: 1px solid #eee;
   display: flex;
   &:nth-child(2n) {
     background-color: #eee;
   }
+}
+
+.incomplete {
+  text-decoration: none;
+}
+
+.complete {
+  text-decoration: line-through;
+  color: lighten(#000, 60%);
 }
 
 .btn-group {
