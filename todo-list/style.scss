@@ -1,6 +1,7 @@
-br {margin-top: 1em;}
-
-h1 {text-align: center;}
+h1 {
+  text-align: center;
+  margin: 1em 0;
+}
 
 input {margin-right: .5em;}
 
@@ -37,6 +38,6 @@ li {
   color: lighten(#000, 60%);
 }
 
-.btn-group {
+.dropdown {
   margin-left: auto;
 }

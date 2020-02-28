@@ -12,20 +12,29 @@
       <h1>{{title}}</h1>
       <ul class="toDoUL">
         <li v-for="(item, index) in todos">
-          <span v-bind:class="item.class">{{item.text}}</span>
-          <div class="btn-group">
-            <button v-on:click="toggleCompleted(index)" class="btn btn-outline-primary btn-sm">Complete</button>
-            <button v-on:click="todos.splice(index,1)" class="btn btn-outline-primary btn-sm">Delete</button>
+          <span v-show="!item.edit" v-bind:class="item.class">{{item.text}}</span>
+          <input v-show="item.edit" v-bind:value="item.text" v-on:keypress.enter="replaceToDo(index)" type="text" name="add">
+          <div class="dropdown">
+            <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Options
+            </button>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+              <button v-on:click="toggleCompleted(index)" class="dropdown-item" type="button">Complete</button>
+              <button v-on:click="editToDo(index)" class="dropdown-item" type="button">Edit action</button>
+              <button v-on:click="deleteToDo(index)" class="dropdown-item" type="button">Delete</button>
+            </div>
           </div>
         </li>
         <li>
-          <input v-model="newToDo" v-on:keypress.enter="addToDo" type="text" name="add" value="">
+          <input v-model="newToDo" v-on:keypress.enter="addToDo" type="text" name="add" placeholder="add a new to-do!">
           <button v-on:click="addToDo" class="btn btn-outline-primary add">Add</button>
           <br>
         </li>
       </ul>
     </main>
-
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
     <script type="text/javascript" src="todos.js"></script>
   </body>
