@@ -1,5 +1,17 @@
-h1 {
+body {
+  font-family: 'Source Code Pro', sans-serif;
+}
+
+.jumbotron {
+  background: rgb(79,161,219);
+  background: radial-gradient(circle, rgba(79,161,219,1) 0%, rgba(79,91,219,1) 80%);
+  padding: 1em 2em;
+  color: #fff;
   text-align: center;
+}
+
+h1 {
+  font-weight: 900;
   margin: 1em 0;
 }
 
@@ -21,11 +33,14 @@ ul {
   padding-left: 0;
 }
 li {
-  padding: .5em;
-  border: 1px solid #eee;
+  padding: .5em 1em;
   display: flex;
-  &:nth-child(2n) {
-    background-color: #eee;
+  &:nth-last-child(n+2) {
+    border-bottom: 1px solid #ddd;
+  }
+  &:hover {
+    transition: 500ms;
+    background-color: #f4f4f4;
   }
 }
 

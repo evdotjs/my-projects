@@ -1,3 +1,8 @@
+const today = new Date();
+const months = ['January', 'February', 'March', 'April',
+                'May', 'June', 'July', 'August',
+                'September', 'October', 'November', 'December'];
+
 const toDoList = [
   {
          text: "first",
@@ -20,11 +25,12 @@ const toDoList = [
 ];
 
 new Vue({
-  el: 'main',
+  el: '#app',
   data: {
          title: 'To-Do List',
          todos: toDoList,
          newToDo: "",
+         date: `${months[today.getMonth()]} ${today.getDate()}, ${today.getFullYear()}`,
   },
   methods: {
     addToDo: function() {

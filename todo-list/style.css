@@ -1,5 +1,17 @@
-h1 {
+body {
+  font-family: "Source Code Pro", sans-serif;
+}
+
+.jumbotron {
+  background: #4fa1db;
+  background: radial-gradient(circle, #4fa1db 0%, #4f5bdb 80%);
+  padding: 1em 2em;
+  color: #fff;
   text-align: center;
+}
+
+h1 {
+  font-weight: 900;
   margin: 1em 0;
 }
 
@@ -27,12 +39,15 @@ ul {
 }
 
 li {
-  padding: 0.5em;
-  border: 1px solid #eee;
+  padding: 0.5em 1em;
   display: flex;
 }
-li:nth-child(2n) {
-  background-color: #eee;
+li:nth-last-child(n+2) {
+  border-bottom: 1px solid #ddd;
+}
+li:hover {
+  transition: 500ms;
+  background-color: #f4f4f4;
 }
 
 .incomplete {
