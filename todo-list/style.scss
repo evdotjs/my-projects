@@ -1,17 +1,21 @@
+html { height: 100%; }
 body {
-  font-family: 'Source Code Pro', sans-serif;
+  height: 100%;
+  font-family: 'Nunito', sans-serif;
+  background: rgb(79,161,219);
+  background: linear-gradient(to bottom right, rgba(79,161,219,1), rgba(79,91,219,1));
+  background-repeat: no-repeat;
+  color: #fff;
 }
 
 .jumbotron {
-  background: rgb(79,161,219);
-  background: radial-gradient(circle, rgba(79,161,219,1) 0%, rgba(79,91,219,1) 80%);
+  background-color: rgba(0,0,0,0);
   padding: 1em 2em;
-  color: #fff;
   text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 h1 {
-  font-weight: 900;
   margin: 1em 0;
 }
 
@@ -36,11 +40,11 @@ li {
   padding: .5em 1em;
   display: flex;
   &:nth-last-child(n+2) {
-    border-bottom: 1px solid #ddd;
-  }
-  &:hover {
-    transition: 500ms;
-    background-color: #f4f4f4;
+    border-bottom: 1px solid rgba(255,255,255,0.25);
+    &:hover {
+      transition: 500ms;
+      background-color: rgba(255,255,255,0.1);
+    }
   }
 }
 
@@ -50,7 +54,7 @@ li {
 
 .complete {
   text-decoration: line-through;
-  color: lighten(#000, 60%);
+  color: rgba(255,255,255,0.4);
 }
 
 .dropdown {

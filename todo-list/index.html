@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=300, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,900,900i&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <title>To-Do List</title>
@@ -12,7 +12,7 @@
     <div id="app">
       <header class="jumbotron jumbotron-fluid">
         <h1>To-Do List</h1>
-        <h4>{{date}}</h4>
+        <h5>{{date}}</h5>
       </header>
       <main>
         <ul class="toDoUL">
@@ -20,7 +20,7 @@
             <span v-show="!item.edit" v-bind:class="item.class">{{item.text}}</span>
             <input v-show="item.edit" v-bind:value="item.text" v-on:keypress.enter="replaceToDo(index)" type="text" name="add">
             <div class="dropdown">
-              <button class="btn btn-outline-primary btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <button class="btn btn-outline-light btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Options
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
@@ -32,7 +32,7 @@
           </li>
           <li>
             <input v-model="newToDo" v-on:keypress.enter="addToDo" type="text" name="add" placeholder="add a new to-do!">
-            <button v-on:click="addToDo" class="btn btn-outline-primary add">Add</button>
+            <button v-on:click="addToDo" class="btn btn-outline-light add">Add</button>
             <br>
           </li>
         </ul>
