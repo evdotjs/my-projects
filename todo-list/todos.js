@@ -64,10 +64,16 @@ new Vue({
     toggleCompleted: function(index) {
       //toggle between the .complete and .incomplete css rules
       let todo = this.todos[index];
+      let toggleButton = document.querySelector('.toDoUL')
+        .childNodes[index].childNodes[4].childNodes[2].firstChild;
       todo.completed = !todo.completed;
-      todo.completed ?
-        todo.class = 'complete':
+      if (todo.completed) {
+        todo.class = 'complete';
+        toggleButton.innerText = "Mark Incomplete";
+      } else {
         todo.class = 'incomplete';
+        toggleButton.innerText = "Mark Complete";
+      }
     }
   }
 });

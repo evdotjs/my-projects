@@ -1,9 +1,13 @@
+::selection {
+  background-color: rgba(0,0,0,0.25);
+  color: #fff;
+}
 html { height: 100%; }
 body {
   height: 100%;
   font-family: 'Nunito', sans-serif;
   background: rgb(79,161,219);
-  background: linear-gradient(to bottom right, rgba(79,161,219,1), rgba(79,91,219,1));
+  background: linear-gradient(to bottom right, #a770b1, #e9779b, #f6a568);
   background-repeat: no-repeat;
   color: #fff;
 }
@@ -12,7 +16,6 @@ body {
   background-color: rgba(0,0,0,0);
   padding: 1em 2em;
   text-align: center;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 h1 {
@@ -29,21 +32,23 @@ main {
 }
 
 li input[type="text"] {
+  min-width: 10em;
   width: 100%;
 }
 
 ul {
   list-style-type: none;
   padding-left: 0;
+  background-color: rgba(0,0,0,0.05)
 }
 li {
   padding: .5em 1em;
   display: flex;
   &:nth-last-child(n+2) {
-    border-bottom: 1px solid rgba(255,255,255,0.25);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
     &:hover {
       transition: 500ms;
-      background-color: rgba(255,255,255,0.1);
+      background-color: rgba(0,0,0,0.1);
     }
   }
 }
@@ -54,7 +59,7 @@ li {
 
 .complete {
   text-decoration: line-through;
-  color: rgba(255,255,255,0.4);
+  color: rgba(0,0,0,0.3);
 }
 
 .dropdown {

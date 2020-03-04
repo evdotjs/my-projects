@@ -24,7 +24,7 @@
                 Options
               </button>
               <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <button v-on:click="toggleCompleted(index)" class="dropdown-item" type="button">Complete</button>
+                <button v-on:click="toggleCompleted(index)" class="dropdown-item" type="button">Mark Complete</button>
                 <button v-on:click="editToDo(index)" class="dropdown-item" type="button">Edit</button>
                 <button v-on:click="deleteToDo(index)" class="dropdown-item" type="button">Delete</button>
               </div>
@@ -33,7 +33,6 @@
           <li>
             <input v-model="newToDo" v-on:keypress.enter="addToDo" type="text" name="add" placeholder="add a new to-do!">
             <button v-on:click="addToDo" class="btn btn-outline-light add">Add</button>
-            <br>
           </li>
         </ul>
       </main>
