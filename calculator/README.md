@@ -1,5 +1,5 @@
-#Calculator
+# Calculator
 
-###keyboard shortcuts
+### keyboard shortcuts
 - [ ← ]  Backspace
 - [ C ]  Esc
